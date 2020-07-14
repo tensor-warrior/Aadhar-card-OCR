@@ -7,6 +7,14 @@ height = 400 # height of image
 width  = 600 # width of image
 
 image = cv2.resize(cv2.imread("crop.jpg"), (width, height)) # loading and resizing image
+
+lookUpTable = np.empty((1, 256), np.uint8) # applying gamma correction
+gamma = 0.4 # hard-coded for this value
+for i in range(256):
+    lookUpTable = np.clip(pow(i/255.0, gamma)*255.0, 0, 255)
+    
+image = cv2.LUT(image, lookUpTable)
+
 image_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) # converting image into grayscale
 
 kernel = np.array([5,5], np.uint8)
