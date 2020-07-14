@@ -32,7 +32,7 @@ cv2.waitKey(0)
 image_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 info = pytesseract.image_to_string(image_gray, lang="eng") # parsing text in processed aadhar blob
-info = [x for x in info.splitlines() if not x.isspace() and x] # noise reduction in list
+info = [x for x in info.splitlines() if not x.isspace() and x] # getting rid of whitespaces
 
 for i in info:
    print(i) 
