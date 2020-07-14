@@ -34,42 +34,8 @@ image_gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 info = pytesseract.image_to_string(image_gray, lang="eng") # parsing text in processed aadhar blob
 info = [x for x in info.splitlines() if not x.isspace() and x] # noise reduction in list
 
-index = 0 # index will store the index value of DOB field
-for field in enumerate(info): # field is a tuple of index number and corresponding string
-    if "DOB" in field[1]:
-        index = field[0]
-        break
-else:
-    print("Please provide a clean and better cropped image!")
-    exit()
-
-try:
-    name = info[index-1] # name extraction
-    print("Name:", name)
-except IndexError:
-    print("Cannot find name. Please provide a clean and better cropped image!")
-
-try:
-    dob = info[index] # date of birth extraction
-    dob = dob[dob.index("DOB"):]
-    print(dob)
-except IndexError:
-    print("Cannot find DOB. Please provide a clean and better cropped image!")
-
-try:
-    if "female" in info[index+1].casefold(): # gender extraction
-        gender = "Female"
-    else:
-        gender = "Male"
-    print("Gender:", gender)
-except IndexError:
-    print("Cannot find gender. Please provide a clean and better cropped image!")
-
-try:
-    uid = info[index+2] # Extracting UID
-    print(uid)
-except IndexError:
-    print("Cannot find UID. Please provide a clean and better cropped image!")
+for i in info:
+   print(i) 
 
 cv2.destroyAllWindows()
 
