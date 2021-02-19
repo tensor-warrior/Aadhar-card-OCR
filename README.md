@@ -2,13 +2,13 @@
 
 QUICK NOTE: First execute "card extractor.py" and then "text parser.py"
 
-        DESCRIPTION:
-    The project is based on the following pipeline
+DESCRIPTION:
+The project is based on the following pipeline
 
   Card Blob  --->  Noise reduction  --->  Character  --->  Information
   Detection        and elimination        Recognition      Segmentation
 
-      STEP 1: Card Blob Detection
+STEP 1: Card Blob Detection
 This step is accomplished through edge detection of the boundaries of the card followed by blob
 cropping. We are using the Canny edge detector for edge detection. To crop out the aadhar blob
 we are using warp perspective.
@@ -19,7 +19,7 @@ out image of the aadhar card blob. Do not move or rename that image to another l
 program will crash.
 --------------------------------------------------------------------------------------------------
 
-      STEP 2: Noise reduction and elimination
+STEP 2: Noise reduction and elimination
 Here we try to remove useless elements like photograph of person, QR code, headers and footers,
 line segments, etc. The accuracy of this step depends upon how much bright is the image and how
 better is it cropped and oriented and, thus, depends upon the quality of image "crop.jpg" obtained
@@ -28,7 +28,7 @@ on the accuracy of this step. The accuracy cannot be theoretically calculated so
 the only way to determine it.
 --------------------------------------------------------------------------------------------------
 
-      STEP 3: Character Recognition
+STEP 3: Character Recognition
 Character recognition is accomplished via the wrapper class for tesseract-ocr which is pytesseract.
 
 Following are the scripts for which tesseract-ocr can be trained:
