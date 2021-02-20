@@ -1,4 +1,4 @@
-                        ## AADHAR CARD OCR - Version 1.0
+                              AADHAR CARD OCR - Version 1.0
 
 QUICK NOTE: First execute "card extractor.py" and then "text parser.py"
 
