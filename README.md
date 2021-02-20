@@ -5,10 +5,9 @@ QUICK NOTE: First execute "card extractor.py" and then "text parser.py"
 DESCRIPTION:
 The project is based on the following pipeline
 
-  Card Blob  --->  Noise reduction  --->  Character  --->  Information
-  Detection        and elimination        Recognition      Segmentation
+  Card Blob Detection --->  Noise reduction and elimination --->  Character Recognition --->  Information Segmentation
 
-STEP 1: Card Blob Detection
+**STEP 1: Card Blob Detection**
 This step is accomplished through edge detection of the boundaries of the card followed by blob
 cropping. We are using the Canny edge detector for edge detection. To crop out the aadhar blob
 we are using warp perspective.
@@ -16,19 +15,17 @@ we are using warp perspective.
 All these functionalities are incorporated in the script "card extractor.py" so you are required
 to run that first. This script will generate an image named "crop.jpg" which contains the cropped
 out image of the aadhar card blob. Do not move or rename that image to another location or the
-program will crash.
---------------------------------------------------------------------------------------------------
+program will crash.---
 
-STEP 2: Noise reduction and elimination
+**STEP 2: Noise reduction and elimination**
 Here we try to remove useless elements like photograph of person, QR code, headers and footers,
 line segments, etc. The accuracy of this step depends upon how much bright is the image and how
 better is it cropped and oriented and, thus, depends upon the quality of image "crop.jpg" obtained
 by executing "card extractor.py". Therefore, accuracy of the previous step will have a good effect
 on the accuracy of this step. The accuracy cannot be theoretically calculated so experimentation is
-the only way to determine it.
---------------------------------------------------------------------------------------------------
+the only way to determine it.---
 
-STEP 3: Character Recognition
+**STEP 3: Character Recognition**
 Character recognition is accomplished via the wrapper class for tesseract-ocr which is pytesseract.
 
 Following are the scripts for which tesseract-ocr can be trained:
@@ -70,10 +67,9 @@ for English because:
 2. Tesseract gives much greater accuracy for English compared to other languages and scripts.
 
 Again, the accuracy of this step depends upon how much noise free is the card blob.
-This step is implemented in the script "text parser.py".
------------------------------------------------------------------------------------------------------
+This step is implemented in the script "text parser.py".---
 
-STEP 4: Information Segmentation
+**STEP 4: Information Segmentation**
 From the data obtained in the previous step, in this step useful information like name, date of birth,
 gender and uid are extracted. The segmentation works fine for new Aadhar card formats and is expected
 to work fine for older formats too. This step is again implemented in the script "text parser.py".
