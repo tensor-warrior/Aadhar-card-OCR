@@ -1,4 +1,5 @@
-                              AADHAR CARD OCR - Version 1.0
+# AADHAR CARD OCR - Version 1.0
+
 
 QUICK NOTE: First execute "card extractor.py" and then "text parser.py"
 
@@ -6,6 +7,9 @@ DESCRIPTION:
 The project is based on the following pipeline
 
   Card Blob Detection --->  Noise reduction and elimination --->  Character Recognition --->  Information Segmentation
+  
+---
+---
 
 **STEP 1: Card Blob Detection**
 This step is accomplished through edge detection of the boundaries of the card followed by blob
