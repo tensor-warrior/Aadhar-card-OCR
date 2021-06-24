@@ -12,8 +12,8 @@ The project is based on the following pipeline
 
 **STEP 1: Card Blob Detection**
 This step is accomplished through edge detection of the boundaries of the card followed by blob
-cropping. We are using the Canny edge detector for edge detection. To crop out the aadhar blob
-we are using warp perspective.
+cropping. I have used the Canny edge detector for edge detection. To crop out the aadhar blob
+I have used warp perspective functionality in OpenCV.
 
 All these functionalities are incorporated in the script "card extractor.py" so you are required
 to run that first. This script will generate an image named "crop.jpg" which contains the cropped
@@ -23,12 +23,11 @@ program will crash.
 ---
 
 **STEP 2: Noise reduction and elimination**
-Here we try to remove useless elements like photograph of person, QR code, headers and footers,
-line segments, etc. The accuracy of this step depends upon how much bright is the image and how
+In this step the useless elements like photograph of person, QR code, headers and footers,
+line segments, etc are removed. The accuracy of this step depends upon how much bright is the image and how
 better is it cropped and oriented and, thus, depends upon the quality of image "crop.jpg" obtained
 by executing "card extractor.py". Therefore, accuracy of the previous step will have a good effect
-on the accuracy of this step. The accuracy cannot be theoretically calculated so experimentation is
-the only way to determine it.
+on the accuracy of this step. The accuracy isn't calculated because of lack of data but so far it has given quite good results.
 
 ---
 **STEP 3: Character Recognition**
