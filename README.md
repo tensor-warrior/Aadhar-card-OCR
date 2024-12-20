@@ -1,8 +1,5 @@
 # AADHAR CARD OCR - Version 1.0
 
-
-QUICK NOTE: First execute "card extractor.py" and then "text parser.py"
-
 DESCRIPTION:
 The project is based on the following pipeline
 
